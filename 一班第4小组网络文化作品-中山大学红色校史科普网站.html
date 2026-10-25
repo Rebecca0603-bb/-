@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>世纪中大 · 红色薪火——中山大学红色校史科普平台（手机单文件版）</title>
+<meta name="description" content="中山大学红色校史科普网站：党的基础知识、伟大建党精神、四史学习、华南建党、抗战迁徙、院系发展与当代传承。">
+<!-- 单文件版：CSS、JavaScript 与站点图标均已内嵌，可直接单独发送。 -->
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiM4ZjFkMWQiLz4KICA8cGF0aCBkPSJNMzIgMTFsNS4xIDExIDEyIDEuNy04LjcgOC41IDIgMTIuMUwzMiAzOC42bC0xMC40IDUuNyAyLTEyLjEtOC43LTguNSAxMi0xLjd6IiBmaWxsPSIjZjJkOWE3Ii8+Cjwvc3ZnPg0K" type="image/svg+xml">
+<style>
+:root{
+  --red:#8f1d1d;
+  --red-dark:#4d1010;
+  --red-deep:#2b0808;
+  --gold:#c89b56;
+  --gold-light:#f2d9a7;
+  --paper:#f4ead7;
+  --paper-2:#efe0c4;
+  --ink:#211a17;
+  --muted:#6a5a52;
+  --white:#fffaf3;
+  --shadow:0 18px 50px rgba(43,8,8,.16);
+  --radius:14px;
+  --serif:"Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;
+  --sans:"Noto Sans SC","Source Han Sans SC","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%;vertical-align:middle}
+a{color:inherit}
+::selection{background:var(--red);color:var(--white)}
+h1,h2,h3,h4{font-family:var(--serif);line-height:1.22;margin:0 0 .6rem;letter-spacing:.02em}
+p{margin:0 0 1rem}
+.shell{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip-link{position:fixed;left:16px;top:-60px;z-index:1200;background:#fff;color:var(--red);padding:10px 14px;border-radius:8px;font-weight:700;transition:top .2s}
+.skip-link:focus{top:12px}
+
+/* scroll progress */
+.progress{position:fixed;z-index:1200;top:0;left:0;right:0;height:4px;background:rgba(143,29,29,.12)}
+.progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--gold),var(--red));transition:width .1s linear}
+
+/* header */
+.site-header{position:fixed;z-index:1000;top:4px;left:0;right:0;background:rgba(43,8,8,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(242,217,167,.18);transition:padding .25s,background .25s}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--gold-light)}
+.brand-mark{width:38px;height:38px;display:grid;place-items:center;border:1px solid rgba(242,217,167,.4);border-radius:50%}
+.brand-mark svg{width:24px}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}
+.brand-text strong{font-family:var(--serif);font-size:1.15rem;letter-spacing:.12em}
+.brand-text em{font-style:normal;font-size:.72rem;letter-spacing:.3em;opacity:.8}
+.main-nav{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.main-nav a{text-decoration:none;color:#f6e7cd;font-size:.92rem;padding:8px 10px;border-radius:8px;position:relative;transition:background .2s,color .2s}
+.main-nav a:hover,.main-nav a:focus{background:rgba(242,217,167,.14);color:#fff}
+.main-nav a::after{content:"";position:absolute;left:10px;right:10px;bottom:4px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .2s}
+.main-nav a:hover::after,.main-nav a.active-link::after{transform:scaleX(1)}
+.main-nav a.active-link{color:#fff;background:rgba(242,217,167,.12)}
+.nav-toggle{display:none;width:44px;height:38px;padding:8px;background:transparent;border:0;cursor:pointer}
+.nav-toggle .line{display:block;height:2px;background:var(--gold-light);margin:5px 0;transition:transform .25s,opacity .2s}
+.nav-toggle[aria-expanded="true"] .line:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] .line:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] .line:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* hero */
+.hero{position:relative;min-height:min(940px,100svh);color:#fff8ec;background:linear-gradient(135deg,#2b0808 0%,#6b1212 42%,#8f1d1d 100%);overflow:hidden;display:flex;align-items:center;padding:120px 0 80px}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 20%,rgba(242,217,167,.22),transparent 30%),radial-gradient(circle at 20% 80%,rgba(201,155,86,.16),transparent 45%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:52px 52px;transform:perspective(700px) rotateX(18deg) scale(1.2);opacity:.4;mask-image:linear-gradient(to bottom,transparent,#000 30%,#000 70%,transparent)}
+.hero-glow{position:absolute;width:680px;height:680px;right:-180px;top:-140px;background:radial-gradient(circle,rgba(242,217,167,.28),transparent 65%);filter:blur(10px)}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.12fr .88fr;align-items:center;gap:30px}
+.hero-kicker{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px;color:#ecd6a5}
+.hero-kicker span{padding:6px 12px;border:1px solid rgba(242,217,167,.32);border-radius:99px;font-size:.82rem;letter-spacing:.1em}
+.hero h1{font-size:clamp(3.3rem,8vw,6.8rem);margin:0 0 10px;line-height:.98;letter-spacing:.04em;text-shadow:0 12px 32px rgba(0,0,0,.32)}
+.hero h1 em{display:block;font-style:normal;color:var(--gold-light);letter-spacing:.16em}
+.hero-credit{margin:2px 0 18px;color:#f2d9a7;font-family:var(--serif);font-size:clamp(.9rem,1.5vw,1.04rem);font-weight:600;letter-spacing:.06em;line-height:1.7;max-width:680px}
+.hero-credit span{white-space:nowrap}
+.hero-lead{max-width:620px;font-size:clamp(1.05rem,2.2vw,1.28rem);color:#f8ead1}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 40px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 24px;border-radius:99px;text-decoration:none;font-weight:700;letter-spacing:.08em;border:1px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
+.btn.primary{color:#4d1010;background:linear-gradient(120deg,#f2d9a7,#c89b56);box-shadow:0 12px 28px rgba(0,0,0,.24)}
+.btn.primary:hover,.btn.primary:focus{transform:translateY(-2px);box-shadow:0 16px 36px rgba(0,0,0,.3)}
+.btn.ghost{color:#f8ead1;border-color:rgba(248,234,209,.42)}
+.btn.ghost:hover,.btn.ghost:focus{background:rgba(248,234,209,.12)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0;max-width:620px}
+.hero-stats div{padding:14px 10px;background:rgba(43,8,8,.42);border:1px solid rgba(242,217,167,.18);border-radius:12px;text-align:center}
+.hero-stats dt{font-size:.78rem;letter-spacing:.14em;opacity:.75}
+.hero-stats dd{margin:4px 0 0;font-family:var(--serif);font-size:1.35rem;font-weight:700}
+.hero-visual{position:relative;display:grid;place-items:center;min-height:440px}
+.clock-tower{width:min(290px,70%);filter:drop-shadow(0 28px 46px rgba(0,0,0,.4));animation:float 6s ease-in-out infinite}
+.seal{position:absolute;right:8%;top:9%;width:112px;height:112px;display:grid;place-items:center;text-align:center;color:#f2d9a7;background:rgba(77,16,16,.52);border:2px solid rgba(242,217,167,.56);border-radius:50%;box-shadow:0 0 0 8px rgba(242,217,167,.08);font-family:var(--serif);font-size:1.3rem;line-height:1.3;letter-spacing:.12em;transform:rotate(-8deg);animation:sealPulse 5s ease-in-out infinite}
+.spark{position:absolute;background:var(--gold-light);border-radius:50%;opacity:.8;box-shadow:0 0 24px rgba(242,217,167,.9)}
+.star-1{width:8px;height:8px;left:22%;top:22%;animation:sparkle 3s ease-in-out infinite}
+.star-2{width:6px;height:6px;right:22%;bottom:28%;animation:sparkle 4s ease-in-out .6s infinite}
+.star-3{width:5px;height:5px;left:36%;bottom:12%;animation:sparkle 5s ease-in-out 1.2s infinite}
+
+/* section base */
+section[id]{scroll-margin-top:86px}
+.section{position:relative;padding:90px 0}
+.paper{background:linear-gradient(180deg,#f8f0df 0%,#f2e6cf 100%)}
+.paper::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(77,16,16,.08) 1px,transparent 1px);background-size:24px 24px;opacity:.25;pointer-events:none}
+.section > .shell{position:relative;z-index:1}
+.section-head{max-width:840px;margin:0 auto 50px;text-align:center}
+.section-head h2{font-size:clamp(2rem,4.4vw,3.4rem);color:var(--red-dark)}
+.section-head p{color:var(--muted);font-size:1.02rem}
+.section-head.light h2{color:#f8e9cc}
+.section-head.light p{color:#e8d7b8}
+.kicker{position:relative;display:inline-block;margin-bottom:8px;color:var(--red);font-size:.86rem;font-weight:800;letter-spacing:.28em}
+.kicker::before,.kicker::after{content:"";width:26px;height:1px;background:var(--gold);display:inline-block;vertical-align:middle;margin:0 12px}
+.section-head.light .kicker{color:var(--gold-light)}
+
+/* intro */
+.pillars{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.pillar-card{min-height:240px;padding:26px;background:rgba(255,250,243,.86);border:1px solid rgba(143,29,29,.16);border-radius:var(--radius);box-shadow:var(--shadow);position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.pillar-card:hover{transform:translateY(-6px)}
+.pillar-card::before{content:"";position:absolute;right:-40px;bottom:-40px;width:120px;height:120px;background:radial-gradient(circle,rgba(201,155,86,.28),transparent 65%)}
+.pillar-index{position:absolute;right:18px;top:8px;font-family:var(--serif);font-size:3rem;color:rgba(143,29,29,.1);font-weight:700}
+.pillar-card h3{color:var(--red);margin-top:26px}
+.pillar-card p{color:#5a4a43;margin:0}
+
+/* dark timeline */
+.dark-section{background:linear-gradient(180deg,#330b0b,#4d1010 60%,#2b0808);color:#f8e9cc}
+.timeline-filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:45px}
+.chip{padding:8px 18px;color:#f8e9cc;background:rgba(248,233,204,.08);border:1px solid rgba(242,217,167,.3);border-radius:99px;font-size:.9rem;cursor:pointer;transition:all .2s}
+.chip:hover,.chip:focus-visible{background:rgba(242,217,167,.16);outline:none}
+.chip.active{background:linear-gradient(120deg,#f2d9a7,#c89b56);color:#4d1010;border-color:transparent;font-weight:700}
+.timeline{position:relative;list-style:none;margin:0;padding:0 0 20px}
+.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(180deg,transparent,rgba(242,217,167,.5),transparent);transform:translateX(-50%)}
+.timeline-item{position:relative;width:calc(50% - 32px);margin:0 0 30px;display:flex;flex-direction:column}
+.timeline-item:nth-child(odd){margin-left:0}
+.timeline-item:nth-child(even){margin-left:calc(50% + 32px)}
+.timeline-year{position:static;display:inline-flex;align-items:center;margin:0 0 12px;padding:7px 13px;font-family:var(--serif);font-size:1.08rem;font-weight:800;color:var(--gold-light);letter-spacing:.08em;line-height:1.2;white-space:nowrap;background:rgba(248,233,204,.08);border:1px solid rgba(242,217,167,.25);border-radius:99px}
+.timeline-item:nth-child(odd) .timeline-year{align-self:flex-end}
+.timeline-item:nth-child(even) .timeline-year{align-self:flex-start}
+.timeline-item::before{content:"";position:absolute;top:18px;width:14px;height:14px;background:var(--gold);border:3px solid #330b0b;border-radius:50%;box-shadow:0 0 0 4px rgba(242,217,167,.14)}
+.timeline-item:nth-child(odd)::before{right:-39px}
+.timeline-item:nth-child(even)::before{left:-39px}
+.timeline-card{background:linear-gradient(140deg,rgba(248,233,204,.96),rgba(244,234,215,.88));color:var(--ink);padding:24px;border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.22);border:1px solid rgba(242,217,167,.3);transition:transform .25s,box-shadow .25s}
+.timeline-card:hover{transform:translateY(-4px);box-shadow:0 24px 55px rgba(0,0,0,.3)}
+.timeline-card h3{color:var(--red);font-size:1.22rem;margin-bottom:.4rem}
+.timeline-card p{font-size:.94rem;color:#4a3a34;margin:0}
+.timeline-card .tag{display:inline-block;margin-top:12px;padding:4px 10px;background:rgba(143,29,29,.1);color:var(--red);font-size:.78rem;border-radius:6px}
+.timeline-item.hidden{display:none}
+
+/* knowledge */
+.knowledge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.knowledge-card{position:relative;padding:30px 26px;background:#fffaf3;border-radius:var(--radius);border-top:4px solid var(--red);box-shadow:var(--shadow);transition:transform .25s}
+.knowledge-card:hover{transform:translateY(-5px)}
+.knowledge-card h3{color:var(--red);font-size:1.3rem}
+.knowledge-card blockquote{margin:0;padding:16px;border-left:4px solid var(--gold);background:rgba(201,155,86,.1);font-size:.97rem;line-height:1.8}
+.knowledge-card b{color:var(--red-dark)}
+.oath-band{margin-top:40px;padding:34px;display:grid;grid-template-columns:1fr auto;gap:30px;align-items:center;background:linear-gradient(120deg,var(--red-dark),var(--red));color:#f6e7cd;border-radius:var(--radius);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.oath-band::before{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;border:2px solid rgba(242,217,167,.25);border-radius:50%}
+.oath-band h3{margin-bottom:10px;color:var(--gold-light);letter-spacing:.2em}
+.oath-band p{margin:0;font-size:1.02rem;line-height:1.9}
+.oath-band span{font-family:var(--serif);font-size:4.2rem;color:rgba(242,217,167,.55);writing-mode:vertical-rl;letter-spacing:.4em}
+
+/* spirit */
+.red-panel{background:linear-gradient(135deg,#330b0b,#6b1212);color:#f8e9cc}
+.spirit-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.spirit-card{min-height:300px;padding:28px 24px;background:rgba(43,8,8,.55);border:1px solid rgba(242,217,167,.18);border-radius:var(--radius);position:relative;overflow:hidden;transition:transform .25s,background .25s}
+.spirit-card:hover{transform:translateY(-6px);background:rgba(77,16,16,.75)}
+.spirit-card b{display:block;font-family:var(--serif);font-size:1.7rem;color:#fff}
+.spirit-card span{display:block;margin:8px 0 18px;font-family:var(--serif);font-size:1.15rem;color:var(--gold-light);letter-spacing:.16em}
+.spirit-card p{color:#ecdbbc;font-size:.92rem;margin:0}
+.spirit-card::after{content:"★";position:absolute;right:-14px;bottom:-26px;font-size:7rem;color:rgba(242,217,167,.08);line-height:1}
+
+/* tabs */
+.tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.tab{min-width:120px;padding:12px 24px;background:transparent;border:1px solid rgba(143,29,29,.24);color:var(--red);font-size:1.05rem;font-weight:700;cursor:pointer;border-radius:10px;transition:all .2s}
+.tab:hover,.tab:focus-visible{background:rgba(143,29,29,.08);outline:none}
+.tab.active{background:var(--red);color:#fff;border-color:var(--red);box-shadow:0 10px 24px rgba(143,29,29,.2)}
+.tab-panels{background:rgba(255,250,243,.82);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.tab-panel{padding:40px;border-top:4px solid var(--red)}
+.tab-panel[hidden]{display:none!important}
+.tab-grid{display:grid;grid-template-columns:1.5fr .8fr;gap:30px;align-items:start}
+.tab-copy h3{font-size:1.5rem;color:var(--red-dark)}
+.tab-copy p{color:#4a3a34}
+.think-card{padding:26px;background:rgba(201,155,86,.14);border:1px dashed rgba(143,29,29,.35);border-radius:12px}
+.think-card h4{color:var(--red);letter-spacing:.2em}
+.think-card p{margin:0;font-size:.95rem}
+
+/* history */
+.history{background:linear-gradient(180deg,#2b0808,#531313 70%,#330b0b)}
+.story-block{margin-bottom:60px;padding:38px;background:rgba(43,8,8,.58);border:1px solid rgba(242,217,167,.14);border-radius:16px;backdrop-filter:blur(5px)}
+.story-tag{display:inline-block;margin-bottom:20px;padding:7px 14px;background:rgba(242,217,167,.14);color:var(--gold-light);border-radius:99px;font-size:.84rem;letter-spacing:.16em}
+.story-grid{display:grid;grid-template-columns:1.4fr .8fr;gap:32px;align-items:center}
+.story-grid.reverse{grid-template-columns:.8fr 1.4fr}
+.story-grid.reverse .story-copy{order:2}
+.story-grid.reverse .archive-card,.story-grid.reverse .route-map{order:1}
+.story-copy h3{font-size:clamp(1.5rem,3vw,2rem);color:#f8e9cc}
+.story-copy p{color:#e5d3b5}
+.archive-card{padding:28px;background:linear-gradient(160deg,#f7ecd7,#ead8b9);color:#3b2b25;border-radius:14px;border:1px solid rgba(242,217,167,.4);box-shadow:0 20px 40px rgba(0,0,0,.28);position:relative}
+.archive-card::before{content:"档案";position:absolute;right:20px;top:14px;padding:5px 10px;border:1px solid var(--red);color:var(--red);font-size:.72rem;border-radius:6px;opacity:.7}
+.archive-card h4{color:var(--red);letter-spacing:.14em}
+.archive-card p{margin-bottom:.6rem;font-size:.94rem}
+.mini-note{color:#7c6456;font-size:.82rem!important}
+.tower-card{text-align:center}
+.tower-card svg{width:170px;margin-bottom:10px}
+.route-map{padding:22px;background:rgba(43,8,8,.5);border:1px solid rgba(242,217,167,.2);border-radius:14px}
+.route-map svg{width:100%;height:auto}
+.route-line{filter:drop-shadow(0 0 10px rgba(242,217,167,.45));animation:routeGlow 4s ease-in-out infinite}
+.people-section{padding:0 20px}
+.people-title{text-align:center;color:#f8e9cc;font-size:1.8rem;margin-bottom:28px}
+.people-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.person-card{padding:26px;background:rgba(248,233,204,.08);border:1px solid rgba(242,217,167,.18);border-radius:12px;transition:transform .25s,background .25s}
+.person-card:hover{transform:translateY(-4px);background:rgba(242,217,167,.12)}
+.person-card span{color:var(--gold);font-size:.84rem;letter-spacing:.18em}
+.person-card h4{color:#f8e9cc;margin:.4rem 0 .5rem;font-size:1.3rem}
+.person-card p{color:#d9c8ab;font-size:.92rem;margin:0}
+.foot-note{margin-top:18px;color:#bfa98a;font-size:.85rem;text-align:center}
+
+/* faculty */
+.faculty-timeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin:-12px 0 34px;padding:20px 10px;background:rgba(255,250,243,.66);border:1px solid rgba(143,29,29,.13);border-radius:14px;position:relative}
+.faculty-timeline::before{content:"";position:absolute;left:8%;right:8%;top:40px;height:2px;background:linear-gradient(90deg,rgba(143,29,29,.2),var(--red),rgba(143,29,29,.2))}
+.faculty-timeline div{position:relative;z-index:1;text-align:center;padding:0 8px}
+.faculty-timeline div::before{content:"";display:block;width:12px;height:12px;margin:0 auto 13px;background:var(--red);border:3px solid var(--paper);border-radius:50%;box-shadow:0 0 0 2px rgba(143,29,29,.24)}
+.faculty-timeline b{display:block;color:var(--red);font-family:var(--serif);font-size:1.05rem}
+.faculty-timeline span{display:block;margin-top:5px;color:var(--muted);font-size:.78rem;line-height:1.45}
+.faculty-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.faculty-card{padding:32px;background:#fffaf3;border-radius:var(--radius);border-bottom:5px solid var(--gold);box-shadow:var(--shadow);transition:transform .25s}
+.faculty-card:hover{transform:translateY(-6px)}
+.faculty-card span{font-family:var(--serif);font-size:2.4rem;color:rgba(143,29,29,.14);font-weight:800}
+.faculty-card h3{color:var(--red);margin-top:8px}
+.faculty-card p{color:#5a4a43;font-size:.96rem}
+.mini-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.mini-tags i{font-style:normal;padding:5px 10px;background:rgba(143,29,29,.08);color:var(--red);border-radius:99px;font-size:.8rem}
+
+/* today */
+.today-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.today-card{min-height:230px;padding:26px;background:rgba(43,8,8,.55);border:1px solid rgba(242,217,167,.18);border-radius:14px}
+.today-card h3{color:var(--gold-light)}
+.today-card p{color:#e2d0b1;font-size:.94rem;margin:0}
+.routes{margin-top:45px;padding:30px;background:rgba(43,8,8,.62);border-radius:14px;border:1px solid rgba(242,217,167,.14)}
+.routes h3{color:#f8e9cc;text-align:center;letter-spacing:.2em}
+.routes ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:route}
+.routes li{counter-increment:route;position:relative;padding:18px;background:rgba(248,233,204,.08);border-radius:10px}
+.routes li::before{content:counter(route,decimal-leading-zero);position:absolute;right:14px;top:8px;color:rgba(242,217,167,.4);font-family:var(--serif);font-size:1.7rem}
+.routes b{display:block;color:#f2d9a7}
+.routes span{font-size:.88rem;color:#d8c6a9}
+
+/* quiz */
+.quiz{background:#fffaf3;border-radius:var(--radius);box-shadow:var(--shadow);padding:35px}
+.quiz-item{margin:0 0 22px;padding:22px;border:1px solid rgba(143,29,29,.16);border-radius:12px}
+.quiz-item legend{font-weight:800;color:var(--red-dark);font-family:var(--serif);padding:0 4px}
+.quiz-item label{display:block;margin:10px 0;padding:10px 12px;border-radius:8px;cursor:pointer;background:rgba(143,29,29,.04);transition:background .2s}
+.quiz-item label:hover{background:rgba(143,29,29,.08)}
+.quiz-item input{margin-right:10px;accent-color:var(--red)}
+.quiz-item.correct{border-color:#387a4c;background:rgba(56,122,76,.08)}
+.quiz-item.wrong{border-color:#b73d3d;background:rgba(183,61,61,.08)}
+.quiz-feedback{margin:8px 0 0;color:#7a5b4a;font-size:.9rem}
+.quiz-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.quiz-actions .btn.ghost{color:var(--red-dark);border-color:rgba(143,29,29,.3)}
+.quiz-actions .btn.ghost:hover{background:rgba(143,29,29,.08)}
+.quiz-result{text-align:center;font-weight:800;color:var(--red);min-height:1.5em;margin:20px 0 0}
+
+/* sources */
+.sources{background:#efe0c4}
+.source-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.source-grid a{display:grid;align-content:center;min-height:96px;padding:18px;text-align:center;text-decoration:none;background:rgba(255,250,243,.8);border:1px solid rgba(143,29,29,.14);border-radius:12px;font-size:.92rem;font-weight:600;transition:transform .2s,box-shadow .2s,color .2s}
+.source-grid a:hover,.source-grid a:focus{transform:translateY(-3px);box-shadow:var(--shadow);color:var(--red)}
+
+/* footer */
+.site-footer{background:var(--red-deep);color:#e8d7b8;padding:50px 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.footer-brand b{display:block;font-family:var(--serif);font-size:1.5rem;color:#f2d9a7;letter-spacing:.1em}
+.footer-brand p{margin:.3rem 0 0;font-size:.9rem}
+.footer-note{max-width:520px;margin:0;font-size:.82rem;color:#c2ad91}
+.to-top{position:fixed;right:22px;bottom:22px;z-index:1100;width:46px;height:46px;border:0;border-radius:50%;background:var(--red);color:#fff;font-size:1.2rem;cursor:pointer;box-shadow:0 10px 26px rgba(43,8,8,.3);opacity:0;transform:translateY(20px);pointer-events:none;transition:all .25s}
+.to-top.show{opacity:1;transform:translateY(0);pointer-events:auto}
+.to-top:hover{background:var(--red-dark)}
+
+/* reveal */
+.reveal{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+.js-ready .reveal{opacity:0;transform:translateY(28px)}
+.js-ready .reveal.visible{opacity:1;transform:translateY(0)}
+
+/* animations */
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes sealPulse{0%,100%{box-shadow:0 0 0 8px rgba(242,217,167,.08)}50%{box-shadow:0 0 0 16px rgba(242,217,167,.14)}}
+@keyframes sparkle{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:.9;transform:scale(1.2)}}
+@keyframes routeGlow{0%,100%{opacity:.75}50%{opacity:1}}
+
+/* accessibility */
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* responsive */
+@media (max-width:1080px){
+  .main-nav{gap:2px}
+  .main-nav a{padding:8px 7px;font-size:.82rem}
+  .hero-inner{grid-template-columns:1fr;text-align:center}
+  .hero-copy{order:2}
+  .hero-visual{order:1;min-height:320px;margin-bottom:20px}
+  .hero-kicker,.hero-actions{justify-content:center}
+  .hero-stats{margin-inline:auto}
+  .hero h1 em{letter-spacing:.12em}
+  .pillars,.knowledge-grid,.faculty-grid,.today-grid,.people-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .spirit-grid,.routes ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .faculty-timeline{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .faculty-timeline::before{display:none}
+  .story-grid,.story-grid.reverse{grid-template-columns:1fr}
+  .story-grid.reverse .story-copy,.story-grid.reverse .archive-card,.story-grid.reverse .route-map{order:initial}
+  .timeline::before{left:12px}
+  .timeline-item{width:calc(100% - 52px);margin-left:52px!important}
+  .timeline-item::before{left:-40px!important;right:auto!important}
+  .timeline-year{position:static;align-self:flex-start!important;color:var(--gold-light)}
+}
+@media (max-width:900px){
+  .site-header{top:0}
+  .header-inner{padding:10px 0}
+  .nav-toggle{display:block}
+  .main-nav{position:fixed;z-index:999;inset:74px 14px auto;background:rgba(43,8,8,.97);border:1px solid rgba(242,217,167,.2);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:4px;box-shadow:0 20px 50px rgba(0,0,0,.35);transform:translateY(-16px);opacity:0;visibility:hidden;transition:all .25s}
+  .main-nav.open{transform:translateY(0);opacity:1;visibility:visible}
+  .main-nav a{font-size:1rem;padding:12px}
+}
+@media (max-width:760px){
+  .site-header{top:0}
+  .header-inner{padding:10px 0}
+  .nav-toggle{display:block}
+  .main-nav{position:fixed;z-index:999;inset:74px 14px auto;background:rgba(43,8,8,.97);border:1px solid rgba(242,217,167,.2);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:4px;box-shadow:0 20px 50px rgba(0,0,0,.35);transform:translateY(-16px);opacity:0;visibility:hidden;transition:all .25s}
+  .main-nav.open{transform:translateY(0);opacity:1;visibility:visible}
+  .main-nav a{font-size:1rem;padding:12px}
+  .hero{padding:100px 0 70px;min-height:auto}
+  .hero h1{font-size:clamp(3.1rem,13vw,4.5rem)}
+  .hero-stats{grid-template-columns:1fr;max-width:320px}
+  .section{padding:64px 0}
+  .section-head{margin-bottom:35px}
+  .pillars,.knowledge-grid,.faculty-grid,.today-grid,.people-grid,.spirit-grid,.source-grid,.routes ol{grid-template-columns:1fr}
+  .faculty-timeline{grid-template-columns:1fr;gap:10px;padding:20px 16px}
+  .faculty-timeline div{display:grid;grid-template-columns:64px 1fr;align-items:center;text-align:left;gap:12px;padding:7px 0}
+  .faculty-timeline div::before{display:none}
+  .faculty-timeline b{font-size:1rem}
+  .faculty-timeline span{margin:0;font-size:.86rem}
+  .tab-panel{padding:24px}
+  .tab-grid{grid-template-columns:1fr}
+  .story-block{padding:24px}
+  .archive-card{padding:22px}
+  .seal{width:92px;height:92px;font-size:1.05rem;right:4%;top:0}
+  .clock-tower{width:min(220px,60%)}
+  .oath-band{grid-template-columns:1fr;padding:26px}
+  .oath-band span{writing-mode:horizontal-tb;font-size:2.2rem;letter-spacing:.4em;text-align:center}
+  .quiz{padding:20px}
+  .footer-inner{justify-content:center;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .clock-tower,.seal,.spark,.route-line{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+  *{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="shell header-inner">
+    <a class="brand" href="#top" aria-label="回到首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" focusable="false"><path d="M24 5l4.8 10.3 11.2 1.6-8.2 8 2 11.2L24 30.8 14.2 36.1l2-11.2-8.2-8 11.2-1.6z" fill="#f2d9a7"></path><circle cx="24" cy="24" r="21" fill="none" stroke="#f2d9a7" stroke-width="2" opacity=".35"></circle></svg>
+      </span>
+      <span class="brand-text"><strong>世纪中大</strong><em>红色薪火</em></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="主导航">
+      <a href="#timeline">红色年轮</a>
+      <a href="#party">党的知识</a>
+      <a href="#spirit">建党精神</a>
+      <a href="#sishi">四史学习</a>
+      <a href="#history">红色校史</a>
+      <a href="#faculty">院系薪火</a>
+      <a href="#today">今日传承</a>
+      <a href="#quiz">知识小测</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">
+      <span class="line"></span><span class="line"></span><span class="line"></span><span class="sr-only">打开菜单</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" id="top">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="shell hero-inner">
+      <div class="hero-copy">
+        <p class="hero-kicker"><span>中大红色校史科普平台</span><span>1924—2026</span></p>
+        <h1>世纪中大<em>红色薪火</em></h1>
+        <p class="hero-credit">2026年（第3期）入党发展对象培训班一班第4小组 <span>药学院</span></p>
+        <p class="hero-lead">从华南建党星火到民族复兴征程，从文明路钟楼到三校区五校园。这里是一部可读、可查、可传播的中山大学红色校史长卷。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#history">走进红色校史</a>
+          <a class="btn ghost" href="#sishi">开启四史学习</a>
+        </div>
+        <dl class="hero-stats">
+          <div><dt>创校</dt><dd>1924</dd></div>
+          <div><dt>抗战流亡办学</dt><dd>七年</dd></div>
+          <div><dt>今日校区</dt><dd>三校区五校园</dd></div>
+        </dl>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="clock-tower">
+          <svg viewBox="0 0 260 420" focusable="false">
+            <defs>
+              <linearGradient id="towerFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#f7e8cd" stop-opacity=".95"></stop>
+                <stop offset="1" stop-color="#d9b782" stop-opacity=".55"></stop>
+              </linearGradient>
+            </defs>
+            <path class="tower-body" d="M80 420V128h100v292z" fill="url(#towerFill)" stroke="#8f1d1d" stroke-width="3"></path>
+            <path d="M50 128L130 45l80 83z" fill="#8f1d1d" stroke="#f2d9a7" stroke-width="3"></path>
+            <rect x="98" y="100" width="64" height="64" rx="6" fill="#6b1212" stroke="#f2d9a7" stroke-width="3"></rect>
+            <path d="M130 108v20l14 8" stroke="#f2d9a7" stroke-width="3" fill="none" stroke-linecap="round"></path>
+            <path d="M92 190h76M92 230h76M92 270h76M92 310h76M92 350h76" stroke="#8f1d1d" stroke-width="3" opacity=".5"></path>
+            <rect x="80" y="128" width="100" height="292" fill="none" stroke="#4d1010" stroke-width="6" opacity=".18"></rect>
+          </svg>
+        </div>
+        <div class="seal">红色<br>薪火<br>相传</div>
+        <div class="spark star-1"></div><div class="spark star-2"></div><div class="spark star-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="intro section paper" aria-labelledby="introTitle">
+    <div class="shell">
+      <div class="section-head">
+        <p class="kicker">序厅</p>
+        <h2 id="introTitle">一所在建党浪潮中生长的大学</h2>
+        <p>中山大学由孙中山先生于1924年亲手创办。其前身院校的师生，也是华南地区早期共产党组织的重要创建者与参与者。红色基因不是后来“贴”在学校身上的标签，而是从建校之初就渗入课堂、报刊、街巷与战火中的实践。</p>
+      </div>
+      <div class="pillars">
+        <article class="pillar-card reveal">
+          <span class="pillar-index">01</span>
+          <h3>党旗所指</h3>
+          <p>把党的创新理论、党的历史和党的宗旨讲清楚，让青年读者看得懂、记得住、用得上。</p>
+        </article>
+        <article class="pillar-card reveal">
+          <span class="pillar-index">02</span>
+          <h3>校史为证</h3>
+          <p>以中大博物馆（校史馆）、学校官网、百年校庆资料和党章等权威材料为底本，梳理人物与事件。</p>
+        </article>
+        <article class="pillar-card reveal">
+          <span class="pillar-index">03</span>
+          <h3>青年可学</h3>
+          <p>用时间轴、人物卡、地图、四史专题和小测，把严肃学习变成可参与的校史体验。</p>
+        </article>
+        <article class="pillar-card reveal">
+          <span class="pillar-index">04</span>
+          <h3>薪火相传</h3>
+          <p>从“博学、审问、慎思、明辨、笃行”到“传承红色基因”，连接百年前后中大人的使命。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline" class="section dark-section" aria-labelledby="timelineTitle">
+    <div class="shell">
+      <div class="section-head light">
+        <p class="kicker">红色年轮</p>
+        <h2 id="timelineTitle">百年时间轴：中大与家国同行</h2>
+        <p>可按主题筛选时间节点，点击卡片查看关键细节。</p>
+      </div>
+      <div class="timeline-filters" role="group" aria-label="时间轴筛选">
+        <button class="chip active" data-tfilter="all" aria-pressed="true">全部</button>
+        <button class="chip" data-tfilter="party" aria-pressed="false">建党星火</button>
+        <button class="chip" data-tfilter="school" aria-pressed="false">建校发展</button>
+        <button class="chip" data-tfilter="war" aria-pressed="false">烽火岁月</button>
+        <button class="chip" data-tfilter="new" aria-pressed="false">人民中大</button>
+      </div>
+      <ol class="timeline" id="timelineList">
+        <li class="timeline-item reveal" data-tags="party">
+          <div class="timeline-year">1921</div>
+          <article class="timeline-card">
+            <h3>广州共产主义小组成立</h3>
+            <p>陈独秀任首任书记，后由谭平山接任。这是中共一大前全国六个早期党组织之一，中大前身院校教师谭平山、谭植棠、陈公博是核心创建人。</p>
+            <span class="tag">建党星火</span>
+          </article>
+        </li>
+        <li class="timeline-item reveal" data-tags="party school">
+          <div class="timeline-year">1924</div>
+          <article class="timeline-card">
+            <h3>国立广东大学成立</h3>
+            <p>2月4日，孙中山下令合并国立高等师范、广东法科大学、广东农业专门学校，筹建国立广东大学；11月11日举行成立典礼，并题写“博学、审问、慎思、明辨、笃行”。</p>
+            <span class="tag">建校发展</span>
+          </article>
+        </li>
+        <li class="timeline-item reveal" data-tags="party school">
+          <div class="timeline-year">1926</div>
+          <article class="timeline-card">
+            <h3>定名国立中山大学；妇女运动训练展开</h3>
+            <p>学校正式定名国立中山大学。同年，妇女运动人员训练所创办，邓颖超任所长，陈铁军主持日常工作并授课，革命教育进入更广阔的社会现场。</p>
+            <span class="tag">建党星火</span>
+          </article>
+        </li>
+        <li class="timeline-item reveal" data-tags="party school">
+          <div class="timeline-year">1927</div>
+          <article class="timeline-card">
+            <h3>鲁迅任教，革命话语激荡</h3>
+            <p>1月18日，鲁迅到校，任文学系主任兼教务主任，提出“读书不忘革命，革命不忘读书”。同年“四一五”反革命政变后，校内进步力量遭受严重镇压。</p>
+            <span class="tag">红色课堂</span>
+          </article>
+        </li>
+        <li class="timeline-item reveal" data-tags="war">
+          <div class="timeline-year">1938</div>
+          <article class="timeline-card">
+            <h3>广州沦陷，学校西迁</h3>
+            <p>8月31日，日军首次轰炸广州，中大5处被炸；10月21日广州沦陷，最后一批教职员押运图书、仪器离开广州，学校开启流亡办学。</p>
+            <span class="tag">烽火岁月</span>
+          </article>
+        </li>
+        <li class="timeline-item reveal" data-tags="war">
+          <div class="timeline-year">1938-1945</div>
+          <article class="timeline-card">
+            <h3>四易其址，弦歌不辍</h3>
+            <p>师生先后迁至罗定、云南澄江、粤北坪石，1945年初又分散到梅县、连县、仁化等地。流亡办学七年，教学、调查、宣传与抗日救亡并未停止。</p>
+            <span class="tag">烽火岁月</span>
+          </article>
+        </li>
+        <li class="timeline-item reveal" data-tags="new">
+          <div class="timeline-year">1949</div>
+          <article class="timeline-card">
+            <h3>回到人民手中</h3>
+            <p>广州解放后，中山大学回到人民手中；1950年1月20日，接管工作基本完成，学校开启新中国高等教育的新篇章。</p>
+            <span class="tag">人民中大</span>
+          </article>
+        </li>
+        <li class="timeline-item reveal" data-tags="new school">
+          <div class="timeline-year">1951-1952</div>
+          <article class="timeline-card">
+            <h3>校庆日改为11月12日；院系调整</h3>
+            <p>1951年，学校将校庆日改为孙中山诞辰日11月12日，宋庆龄复函肯定。1952年院系调整，原中山大学与岭南大学等校相关专业合并，校址迁入康乐园。</p>
+            <span class="tag">建校发展</span>
+          </article>
+        </li>
+        <li class="timeline-item reveal" data-tags="new school">
+          <div class="timeline-year">2001</div>
+          <article class="timeline-card">
+            <h3>中山大学与中山医科大学合并</h3>
+            <p>10月，两校合并组建新的中山大学，医学传统与现代综合学科格局深度融合，学校进入跨越式发展阶段。</p>
+            <span class="tag">今日中大</span>
+          </article>
+        </li>
+        <li class="timeline-item reveal" data-tags="new school">
+          <div class="timeline-year">2024</div>
+          <article class="timeline-card">
+            <h3>百年校庆，赓续红色血脉</h3>
+            <p>11月12日，习近平总书记致信祝贺中山大学建校100周年，强调“传承红色基因，坚持为党育人、为国育才”。红色校史成为面向新时代的精神坐标。</p>
+            <span class="tag">精神传承</span>
+          </article>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="party" class="section paper" aria-labelledby="partyTitle">
+    <div class="shell">
+      <div class="section-head">
+        <p class="kicker">党的基础知识</p>
+        <h2 id="partyTitle">读懂我们党的性质、宗旨与使命</h2>
+        <p>以下要点依据《中国共产党章程》整理，帮助读者从基础概念出发理解校史中的信仰选择。</p>
+      </div>
+      <div class="knowledge-grid">
+        <article class="knowledge-card reveal">
+          <h3>党的性质</h3>
+          <blockquote>中国共产党是中国工人阶级的先锋队，同时是中国人民和中华民族的先锋队，是中国特色社会主义事业的领导核心，代表中国先进生产力的发展要求，代表中国先进文化的前进方向，代表中国最广大人民的根本利益。</blockquote>
+        </article>
+        <article class="knowledge-card reveal">
+          <h3>最高理想</h3>
+          <p>党的最高理想和最终目标是<b>实现共产主义</b>。理想信念不是抽象口号，而是需要在具体学习、劳动、科研与服务中检验的行动。</p>
+        </article>
+        <article class="knowledge-card reveal">
+          <h3>根本宗旨</h3>
+          <p><b>全心全意为人民服务</b>是党的根本宗旨。在中大校史中，它体现为青年走向工农民众、医生走向伤兵救护、师生走向抗战宣传与后方服务。</p>
+        </article>
+        <article class="knowledge-card reveal">
+          <h3>行动指南</h3>
+          <p>党以马克思列宁主义、毛泽东思想、邓小平理论、“三个代表”重要思想、科学发展观、习近平新时代中国特色社会主义思想作为自己的行动指南。</p>
+        </article>
+        <article class="knowledge-card reveal">
+          <h3>组织原则</h3>
+          <p><b>民主集中制</b>是党的根本组织原则，强调民主基础上的集中和集中指导下的民主，保证组织统一与集体智慧的统一。</p>
+        </article>
+        <article class="knowledge-card reveal">
+          <h3>入党为什么</h3>
+          <p>申请入党，意味着认同党的纲领和章程，愿意参加党的组织并在其中积极工作、执行党的决定、按期交纳党费，为共产主义奋斗终身。</p>
+        </article>
+      </div>
+      <div class="oath-band reveal">
+        <div>
+          <h3>入党誓词</h3>
+          <p>我志愿加入中国共产党，拥护党的纲领，遵守党的章程，履行党员义务，执行党的决定，严守党的纪律，保守党的秘密，对党忠诚，积极工作，为共产主义奋斗终身，随时准备为党和人民牺牲一切，永不叛党。</p>
+        </div>
+        <span aria-hidden="true">忠诚</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="spirit" class="section red-panel" aria-labelledby="spiritTitle">
+    <div class="shell">
+      <div class="section-head light">
+        <p class="kicker">伟大建党精神</p>
+        <h2 id="spiritTitle">三十二字，一种选择，一生践行</h2>
+        <p>2021年，伟大建党精神在庆祝中国共产党成立100周年大会上首次提出。它既是历史的总结，也是今天的行动坐标。</p>
+      </div>
+      <div class="spirit-grid">
+        <article class="spirit-card reveal"><b>坚持真理</b><span>坚守理想</span><p>真理是方向，理想是定力。中大早期党员在课堂上、报纸上、集会上传播马克思主义，正是把“信什么”变成“做什么”。</p></article>
+        <article class="spirit-card reveal"><b>践行初心</b><span>担当使命</span><p>为中国人民谋幸福、为中华民族谋复兴。从投身工人夜校到妇女运动训练，从抗战宣传到学术报国，初心要靠担当来证明。</p></article>
+        <article class="spirit-card reveal"><b>不怕牺牲</b><span>英勇斗争</span><p>陈铁军英勇就义，卫梓松教授在坪石危局中宁死不屈。历史提醒我们：今天的安全与和平，来自昨天的挺身而出。</p></article>
+        <article class="spirit-card reveal"><b>对党忠诚</b><span>不负人民</span><p>忠诚不是口号，而是把个人前途融入民族命运。今天的青年，也要在专业学习和国家需要之间找到连接点。</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="sishi" class="section paper" aria-labelledby="sishiTitle">
+    <div class="shell">
+      <div class="section-head">
+        <p class="kicker">“四史”学习</p>
+        <h2 id="sishiTitle">四条线索，读懂中大红色坐标</h2>
+        <p>“四史”指党史、新中国史、改革开放史、社会主义发展史。下面每个板块都用“概念—中大连接—思考题”的方式，把理论与校史打通。</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="四史学习板块">
+        <button class="tab active" id="tabDangshi" role="tab" aria-selected="true" aria-controls="panelDangshi">党史</button>
+        <button class="tab" id="tabXinzhongguo" role="tab" aria-selected="false" aria-controls="panelXinzhongguo">新中国史</button>
+        <button class="tab" id="tabGaige" role="tab" aria-selected="false" aria-controls="panelGaige">改革开放史</button>
+        <button class="tab" id="tabShehui" role="tab" aria-selected="false" aria-controls="panelShehui">社会主义发展史</button>
+      </div>
+      <div class="tab-panels">
+        <div class="tab-panel active" id="panelDangshi" role="tabpanel" aria-labelledby="tabDangshi" tabindex="0">
+          <div class="tab-grid">
+            <div class="tab-copy">
+              <h3>党史：从早期组织到百年大党</h3>
+              <p>1921年春天，广州共产党组织正式成立。这个组织不仅是地方党史的起点，也与中大前身院校师生密切相关。此后，师生通过《广东群报》、工人学校、妇女训练、抗战先锋队等方式，把党的主张带到岭南社会深处。</p>
+              <p><b>中大连接：</b>谭平山、谭植棠、陈公博等参与广州共产主义小组创建；《广东群报》成为传播马克思主义的重要阵地。</p>
+            </div>
+            <aside class="think-card"><h4>思考题</h4><p>如果你在1920年代的广州担任学生报刊编辑，你会如何让马克思主义理论贴近工人和青年？</p></aside>
+          </div>
+        </div>
+        <div class="tab-panel" id="panelXinzhongguo" role="tabpanel" aria-labelledby="tabXinzhongguo" tabindex="0" hidden>
+          <div class="tab-grid">
+            <div class="tab-copy">
+              <h3>新中国史：一所大学回到人民手中</h3>
+              <p>1949年广州解放，中山大学回到人民手中；1950年1月20日，接管工作基本完成。此后，学校在院系调整、学科建设、服务国家战略中重塑自身，把“人民大学”四个字落到课堂与社会服务中。</p>
+              <p><b>中大连接：</b>1951年校庆日改为孙中山诞辰日11月12日；1952年院系调整后进入康乐园，形成新的学科与校园格局。</p>
+            </div>
+            <aside class="think-card"><h4>思考题</h4><p>为什么说1949年前后的中大，不仅是政权的更替，更是大学使命与社会关系的变化？</p></aside>
+          </div>
+        </div>
+        <div class="tab-panel" id="panelGaige" role="tabpanel" aria-labelledby="tabGaige" tabindex="0" hidden>
+          <div class="tab-grid">
+            <div class="tab-copy">
+              <h3>改革开放史：扎根湾区，开放发展</h3>
+              <p>改革开放以来，中山大学深度参与广东经济社会发展，并在粤港澳大湾区建设中形成三校区五校园格局，推动文理医工农艺综合发展，服务科技自立自强与区域协同创新。</p>
+              <p><b>中大连接：</b>广州校区提升文理医传统优势，珠海校区发展深海、深空、深地、深蓝学科群，深圳校区重点建设新医科、新工科。</p>
+            </div>
+            <aside class="think-card"><h4>思考题</h4><p>结合你熟悉的学科，思考“开放”如何改变研究问题、教学方式和知识服务社会的路径。</p></aside>
+          </div>
+        </div>
+        <div class="tab-panel" id="panelShehui" role="tabpanel" aria-labelledby="tabShehui" tabindex="0" hidden>
+          <div class="tab-grid">
+            <div class="tab-copy">
+              <h3>社会主义发展史：从思想传播到中国道路</h3>
+              <p>社会主义从空想到科学、从理论到实践、从一国实践到多国发展。中山大学的历史片段说明：科学理论之所以有力量，是因为它能够回答民族危亡、人民解放和国家建设的现实问题。</p>
+              <p><b>中大连接：</b>从《广东群报》传播马克思主义，到新时代“传承红色基因”，理论在不同历史阶段不断与中国实际结合。</p>
+            </div>
+            <aside class="think-card"><h4>思考题</h4><p>把1920年代的“读书救国”与今天的“科技报国”放在一起，你能发现哪些不变的使命？</p></aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="history" class="section dark-section history" aria-labelledby="historyTitle">
+    <div class="shell">
+      <div class="section-head light">
+        <p class="kicker">红色校史</p>
+        <h2 id="historyTitle">星火起岭南，烽火砺中大</h2>
+        <p>这里不只是一串年份，而是一个个具体的人和选择。</p>
+      </div>
+
+      <div class="story-block reveal">
+        <div class="story-tag">第一幕 · 建党星火</div>
+        <div class="story-grid">
+          <div class="story-copy">
+            <h3>中大前身院校与华南建党</h3>
+            <p>1920年冬，陈独秀南下广州，肩负教育改革和组建广东共产党组织的任务。1921年春，广州共产党组织正式成立。陈独秀任首任书记，后由谭平山接任；谭平山、谭植棠、陈公博等中大前身院校教师，成为华南建党的重要推动者。</p>
+            <p>党的“一大”闭幕后，广州共产主义小组改组为中国共产党广东支部，谭平山任书记，陈公博负责组织工作，谭植棠负责宣传工作。阮啸仙、杨匏安、刘尔崧等一批五四运动中涌现的先进分子相继加入广东党组织。</p>
+          </div>
+          <div class="archive-card">
+            <h4>《广东群报》</h4>
+            <p>1920年10月20日创刊，陈公博任总编辑，谭植棠任经理兼编辑，谭平山任编辑。它作为党组织机关报，是华南传播马克思主义的重要阵地。</p>
+            <p class="mini-note">关键词：机关报 · 工人运动 · 早期组织</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-block reveal">
+        <div class="story-tag">第二幕 · 大钟楼里的青年</div>
+        <div class="story-grid reverse">
+          <div class="story-copy">
+            <h3>鲁迅：“永远记得前线”</h3>
+            <p>1927年1月18日，鲁迅抵达广州，任国立中山大学文学系主任兼教务主任，住进文明路校址的大钟楼二楼。他开设《文艺论》《中国文学史》《中国小说史》等课程，教室座无虚席。</p>
+            <p>3月1日，他在开学典礼上提出“读书不忘革命，革命不忘读书”，并在《中山大学开学致语》中写道：“我先只希望中山大学中人虽然坐着工作而永远记得前线。”</p>
+          </div>
+          <div class="archive-card tower-card" aria-hidden="true">
+            <svg viewBox="0 0 160 220"><path d="M48 220V86h64v134z" fill="#f4ead7" stroke="#8f1d1d" stroke-width="4"></path><path d="M32 86L80 34l48 52z" fill="#8f1d1d" stroke="#f4ead7" stroke-width="3"></path><rect x="58" y="66" width="44" height="44" rx="4" fill="#4d1010"></rect><path d="M80 74v16l10 6" stroke="#f4ead7" stroke-width="3" fill="none"></path></svg>
+            <p>文明路大钟楼，也是如今广州鲁迅纪念馆所在地。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-block reveal">
+        <div class="story-tag">第三幕 · 妇女运动与铁军</div>
+        <div class="story-grid">
+          <div class="story-copy">
+            <h3>陈铁军与妇女运动人员训练所</h3>
+            <p>1926年，妇女运动人员训练所创办，邓颖超任所长，陈铁军主持日常工作并授课。训练所课程涉及各国革命史、党的组织法、帝国主义侵略史、妇女运动、劳工组合运动、农民运动概况、宣传方法等，把革命理论与群众工作结合起来。</p>
+            <p>陈铁军1924年入广东大学文学院预科，1926年4月加入中国共产党，1928年英勇就义。她把短暂的青春写进了中国妇女解放与革命斗争的历史。</p>
+          </div>
+          <div class="archive-card"><h4>从课堂到社会</h4><p>课程不只是知识传授，更是组织训练。妇女、工人、农民和青年被组织起来，成为革命力量的一部分。</p><p class="mini-note">关键词：妇女解放 · 群众动员 · 革命实践</p></div>
+        </div>
+      </div>
+
+      <div class="story-block reveal">
+        <div class="story-tag">第四幕 · 抗日大本营</div>
+        <div class="story-grid reverse">
+          <div class="story-copy">
+            <h3>“明耻立信”，走出教室的抵抗</h3>
+            <p>1925年，国立广东大学师生举行“五七雪耻会”，声援五卅运动，参与反帝示威。6月23日，师生参与广州各界示威巡行，遭遇“沙基惨案”。此后，学校不断在民族危机中发出声音。</p>
+            <p>1938年1月7日，国立中山大学抗日先锋队成立。中大抗先参与发起广东青年抗日先锋队，组成41个战时工作队，深入东江、西江、北江等地；部分队员后来进入东江纵队、珠江纵队等华南抗日武装。</p>
+          </div>
+          <div class="route-map" role="img" aria-label="抗战迁徙示意路线：广州、罗定、云南澄江、粤北坪石">
+            <svg viewBox="0 0 420 260">
+              <path class="route-line" d="M48 58 C110 74, 142 66, 184 96 S252 130, 284 96 S348 46, 378 74" fill="none" stroke="#f2d9a7" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 9"></path>
+              <g fill="#f2d9a7" font-family="inherit" font-size="14">
+                <circle cx="48" cy="58" r="7"></circle><text x="26" y="42">广州</text>
+                <circle cx="184" cy="96" r="7"></circle><text x="156" y="126">罗定</text>
+                <circle cx="284" cy="96" r="7"></circle><text x="258" y="126">云南澄江</text>
+                <circle cx="378" cy="74" r="7"></circle><text x="336" y="50">粤北坪石</text>
+              </g>
+              <text x="30" y="206" fill="#e7cfa6" font-size="13">1938—1945：流亡办学七年，弦歌不辍</text>
+              <text x="30" y="228" fill="#c89b56" font-size="12">示意图，非精确地理比例</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-block reveal">
+        <div class="story-tag">第五幕 · 烽火迁徙</div>
+        <div class="story-grid">
+          <div class="story-copy">
+            <h3>四易其址，弦歌不辍</h3>
+            <p>1938年10月21日广州沦陷当天，最后一批教职员工押运图书、仪器离开广州。此后学校迁往广东罗定、云南澄江，1940年再迁粤北坪石，各院部分散于粤湘两省多地。1945年初，坪石告急，学校又分散到梅县、连县、仁化等地办学。</p>
+            <p>这不是一次安静的搬家。轰炸、迁徙、物资短缺、生死考验，都不能让大学教育完全中断。图书馆、仪器、讲义、课堂，成为战时保存文脉与培养力量的载体。</p>
+          </div>
+          <div class="archive-card"><h4>坪石岁月</h4><p>1940年12月，校本部及先修班在坪石镇，农学院在宜章栗源堡，工学院在三星坪新村，理学院在塘口，文学院在清洞，医学院在乐昌城外，法学院在武阳司。</p><p class="mini-note">关键词：战时大学 · 文脉存续 · 民族气节</p></div>
+        </div>
+      </div>
+
+      <div class="people-section reveal">
+        <h3 class="people-title">红色人物群像</h3>
+        <div class="people-grid">
+          <article class="person-card"><span>1920s</span><h4>谭平山</h4><p>广东党组织创建者和领导者之一，中大前身院校教师，参与广州共产主义小组创建。</p></article>
+          <article class="person-card"><span>1926</span><h4>陈铁军</h4><p>入广东大学文学院预科，1926年入党，参与妇女运动训练工作，1928年英勇就义。</p></article>
+          <article class="person-card"><span>1927</span><h4>鲁迅</h4><p>任中山大学文学系主任兼教务主任，提出“读书不忘革命，革命不忘读书”。</p></article>
+          <article class="person-card"><span>1926</span><h4>邓颖超</h4><p>任妇女运动人员训练所所长，推动妇女运动与革命训练结合。</p></article>
+          <article class="person-card"><span>1938</span><h4>中大抗先队员</h4><p>组成战时工作队，深入东江、西江、北江等地开展抗日宣传与组织工作。</p></article>
+          <article class="person-card"><span>1945</span><h4>卫梓松</h4><p>坪石危局中滞留校舍，受敌威胁不屈，为保持民族气节殉难。</p></article>
+        </div>
+        <p class="foot-note">注：人物事迹依据中山大学博物馆（校史馆）与相关公开资料整理；涉及历史人物的身份与活动，均按材料所及表述，不作随意扩大。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faculty" class="section paper" aria-labelledby="facultyTitle">
+    <div class="shell">
+      <div class="section-head">
+        <p class="kicker">院系薪火</p>
+        <h2 id="facultyTitle">学科长河中的家国课题</h2>
+        <p>红色校史不只是革命事件，也写在农学的田野调查、医学的伤兵救护、文科的批判思考与理科的科学报国中。</p>
+      </div>
+      <div class="faculty-timeline reveal" aria-label="中山大学院系沿革简轴">
+        <div><b>1924</b><span>高师 · 法科 · 农专合并筹建</span></div>
+        <div><b>1925</b><span>广东公医医科大学并入</span></div>
+        <div><b>1952</b><span>院系调整，迁入康乐园</span></div>
+        <div><b>2001</b><span>中山大学与中山医科大学合并</span></div>
+        <div><b>今天</b><span>7个学部 · 67个院系协同发展</span></div>
+      </div>
+      <div class="faculty-grid">
+        <article class="faculty-card reveal">
+          <span>01</span>
+          <h3>文科与思想启蒙</h3>
+          <p>学校由广东高等师范、广东法科大学、广东农业专门学校等合并而来，早期文科课堂汇聚新思想。鲁迅、陈寅恪、王力、容庚等先后在中大留下学术足迹，形成思想启蒙、语言文学、古史研究的深厚传统。</p>
+          <div class="mini-tags"><i>新思想传播</i><i>语文建设</i><i>史料整理</i></div>
+        </article>
+        <article class="faculty-card reveal">
+          <span>02</span>
+          <h3>法科与社会科学</h3>
+          <p>广东法科大学是学校重要源头之一。何思敬、王亚南等学者与社会经济问题研究相关，把法律、经济、国际问题与中国命运联系在一起。</p>
+          <div class="mini-tags"><i>社会问题</i><i>政治经济</i><i>国际视野</i></div>
+        </article>
+        <article class="faculty-card reveal">
+          <span>03</span>
+          <h3>医学与生命守护</h3>
+          <p>1925年，广东公医医科大学并入学校，医学教育传统逐步发展，后来形成中山医科大学。抗战中，中大医科毕业生赵立群赴苏州后方伤兵医院参与医疗救护。</p>
+          <div class="mini-tags"><i>西医教育</i><i>战地救护</i><i>医者仁心</i></div>
+        </article>
+        <article class="faculty-card reveal">
+          <span>04</span>
+          <h3>农学与大地文章</h3>
+          <p>广东农业专门学校并入后，农学成为中大重要学科。邓植仪、丁颖等深耕土壤调查、稻作研究与农业改良，让学术扎进中国乡村的现实问题。</p>
+          <div class="mini-tags"><i>稻作改良</i><i>土壤调查</i><i>乡村建设</i></div>
+        </article>
+        <article class="faculty-card reveal">
+          <span>05</span>
+          <h3>理科与科学报国</h3>
+          <p>在战火与建设之间，理科师生坚持科学训练与实地调查。陈焕镛、姜立夫、吴尚时等学者在植物分类、数学、地理等领域留下宝贵积累。</p>
+          <div class="mini-tags"><i>基础研究</i><i>实地调查</i><i>科学救国</i></div>
+        </article>
+        <article class="faculty-card reveal">
+          <span>06</span>
+          <h3>今日学科共同体</h3>
+          <p>今天，中山大学形成文理医工农艺综合发展的学科格局，组建7个学部，67个院系，128个本科专业（办学权），在人才培养与国家战略中延续“学术报国”的脉线。</p>
+          <div class="mini-tags"><i>三校区五校园</i><i>学科交叉</i><i>国家战略</i></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="today" class="section red-panel today" aria-labelledby="todayTitle">
+    <div class="shell">
+      <div class="section-head light">
+        <p class="kicker">今日传承</p>
+        <h2 id="todayTitle">把红色基因带进新时代</h2>
+        <p>2024年，习近平总书记致信祝贺中山大学建校100周年，强调传承红色基因、坚持为党育人、为国育才。今天的红色校史，正在被新一代青年继续书写。</p>
+      </div>
+      <div class="today-grid">
+        <article class="today-card reveal"><h3>校园格局</h3><p>扎根广州、珠海、深圳，形成三校区五校园统筹发展格局，支撑文理医工农艺综合发展。</p></article>
+        <article class="today-card reveal"><h3>学科实力</h3><p>哲学、数学、化学、生物学、生态学、材料科学与工程、电子科学与技术、基础医学、临床医学、药学、工商管理等领域入选“双一流”建设学科名单。</p></article>
+        <article class="today-card reveal"><h3>育人使命</h3><p>以立德树人为根本，以学生成长为中心，强调加强基础、促进交叉、尊重选择、卓越教学。</p></article>
+        <article class="today-card reveal"><h3>青年行动</h3><p>读一本党史，走一段校史路线，做一次志愿服务，讲一个红色故事——传承从具体行动开始。</p></article>
+      </div>
+      <div class="routes reveal">
+        <h3>线上研学路线</h3>
+        <ol>
+          <li><b>文明路钟楼</b><span>建校典礼、鲁迅任教与早期课堂记忆</span></li>
+          <li><b>石牌校训石</b><span>“博学之、审问之、慎思之、明辨之、笃行之”的历史空间</span></li>
+          <li><b>康乐园</b><span>1952年后校园新格局与人民中大建设</span></li>
+          <li><b>粤北坪石</b><span>抗战流亡办学与民族气节</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="quiz" class="section paper" aria-labelledby="quizTitle">
+    <div class="shell narrow">
+      <div class="section-head">
+        <p class="kicker">知识小测</p>
+        <h2 id="quizTitle">五题检验红色学习成果</h2>
+        <p>选择答案后即可查看提示，学习不是终点，行动才是。</p>
+      </div>
+      <form id="quizForm" class="quiz">
+        <fieldset class="quiz-item" data-answer="a">
+          <legend>1. 伟大建党精神的完整表述是？</legend>
+          <label><input type="radio" name="q1" value="a">坚持真理、坚守理想，践行初心、担当使命，不怕牺牲、英勇斗争，对党忠诚、不负人民</label>
+          <label><input type="radio" name="q1" value="b">博学、审问、慎思、明辨、笃行</label>
+          <label><input type="radio" name="q1" value="c">理论联系实际、密切联系群众、批评与自我批评</label>
+          <p class="quiz-feedback" hidden></p>
+        </fieldset>
+        <fieldset class="quiz-item" data-answer="b">
+          <legend>2. 中山大学校训“博学、审问、慎思、明辨、笃行”由谁题写？</legend>
+          <label><input type="radio" name="q2" value="a">陈独秀</label>
+          <label><input type="radio" name="q2" value="b">孙中山</label>
+          <label><input type="radio" name="q2" value="c">鲁迅</label>
+          <p class="quiz-feedback" hidden></p>
+        </fieldset>
+        <fieldset class="quiz-item" data-answer="c">
+          <legend>3. 1921年广州共产党组织的首任书记是谁？</legend>
+          <label><input type="radio" name="q3" value="a">谭平山</label>
+          <label><input type="radio" name="q3" value="b">陈公博</label>
+          <label><input type="radio" name="q3" value="c">陈独秀</label>
+          <p class="quiz-feedback" hidden></p>
+        </fieldset>
+        <fieldset class="quiz-item" data-answer="b">
+          <legend>4. 抗战期间，中山大学流亡办学大约多久？</legend>
+          <label><input type="radio" name="q4" value="a">一年</label>
+          <label><input type="radio" name="q4" value="b">七年</label>
+          <label><input type="radio" name="q4" value="c">十年</label>
+          <p class="quiz-feedback" hidden></p>
+        </fieldset>
+        <fieldset class="quiz-item" data-answer="a">
+          <legend>5. “四史”学习指的是？</legend>
+          <label><input type="radio" name="q5" value="a">党史、新中国史、改革开放史、社会主义发展史</label>
+          <label><input type="radio" name="q5" value="b">古代史、近代史、现代史、当代史</label>
+          <label><input type="radio" name="q5" value="c">校史、系史、学科史、人物史</label>
+          <p class="quiz-feedback" hidden></p>
+        </fieldset>
+        <div class="quiz-actions">
+          <button type="submit" class="btn primary">提交答案</button>
+          <button type="reset" class="btn ghost">重新作答</button>
+        </div>
+        <p id="quizResult" class="quiz-result" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section sources" aria-labelledby="sourcesTitle">
+    <div class="shell">
+      <div class="section-head">
+        <p class="kicker">资料来源</p>
+        <h2 id="sourcesTitle">可查证，才可靠</h2>
+        <p>本站为科普学习用途。史实、引文与数据主要依据下列公开来源整理，欢迎读者进一步阅读原文。</p>
+      </div>
+      <div class="source-grid">
+        <a href="https://www.sysu.edu.cn/xxg/zdjj1.htm" target="_blank" rel="noopener">中山大学官方简介</a>
+        <a href="https://bwgxsg.sysu.edu.cn/" target="_blank" rel="noopener">中山大学博物馆（校史馆）</a>
+        <a href="https://sysu100.sysu.edu.cn/bnzr/sjzd.htm" target="_blank" rel="noopener">百年校庆时间轴</a>
+        <a href="https://sysu100.sysu.edu.cn/xsyd/xzda.htm" target="_blank" rel="noopener">百年校庆学者档案</a>
+        <a href="https://www.12371.cn/special/zggcdzc/zggcdzcqw/" target="_blank" rel="noopener">中国共产党章程</a>
+        <a href="https://www.12371.cn/special/ssxxjy/" target="_blank" rel="noopener">“四史”学习教育专题</a>
+        <a href="https://www.gov.cn/xinwen/2021-07/01/content_5621847.htm" target="_blank" rel="noopener">伟大建党精神讲话</a>
+        <a href="https://mp.weixin.qq.com/s/ozJYuG59Mc4dojdVd2qpOA" target="_blank" rel="noopener">星火起岭南：中大师生与华南建党</a>
+        <a href="https://mp.weixin.qq.com/s/o6X65WhjGFKQoriNbgPzCA" target="_blank" rel="noopener">抗战四易其址</a>
+        <a href="https://mp.weixin.qq.com/s/ugVHhDXGBOb6yo9FZyG9Fw" target="_blank" rel="noopener">作为“抗日大本营”的中大</a>
+        <a href="https://mp.weixin.qq.com/s/BVyMCtTWRWvdwRHWe-JPcw" target="_blank" rel="noopener">中大抗先</a>
+        <a href="https://mp.weixin.qq.com/s/9GPUXrZYAGCoeyBDePIVKg" target="_blank" rel="noopener">鲁迅与中山大学</a>
+        <a href="https://mp.weixin.qq.com/s/MGgSmhVPO6ZZdO-3ihEnXw" target="_blank" rel="noopener">孙中山与中山大学</a>
+        <a href="https://mp.weixin.qq.com/s/E4b_PTTxJViO_OROk8yXkQ" target="_blank" rel="noopener">妇女运动人员训练所</a>
+        <a href="https://bwgxsg.sysu.edu.cn/zh-hans/academics/research" target="_blank" rel="noopener">中山大学校史研究</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <div class="footer-brand">
+      <b>世纪中大 · 红色薪火</b>
+      <p>中山大学红色校史科普学习平台</p>
+    </div>
+    <p class="footer-note">史实以权威馆藏和学校官方发布为准；页面视觉与交互用于科普展示，不含未经授权的正式标识。</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="返回顶部" title="返回顶部"><span aria-hidden="true">↑</span></button>
+<script>
+'use strict';
+
+document.documentElement.classList.add('js-ready');
+
+/* nav */
+const navToggle = document.getElementById('navToggle');
+const mainNav = document.getElementById('mainNav');
+
+navToggle.addEventListener('click', () => {
+  const isOpen = mainNav.classList.contains('open');
+  mainNav.classList.toggle('open', !isOpen);
+  navToggle.setAttribute('aria-expanded', String(!isOpen));
+});
+
+mainNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && mainNav.classList.contains('open')) {
+    mainNav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.focus();
+  }
+});
+
+document.addEventListener('click', event => {
+  if (!mainNav.contains(event.target) && !navToggle.contains(event.target)) {
+    mainNav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+});
+
+/* progress + back to top + header */
+const progressBar = document.getElementById('progressBar');
+const toTop = document.getElementById('toTop');
+const siteHeader = document.getElementById('siteHeader');
+
+function onScroll() {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+  progressBar.style.width = `${progress * 100}%`;
+  toTop.classList.toggle('show', scrollTop > 520);
+  siteHeader.classList.toggle('compact', scrollTop > 60);
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+toTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* reveal */
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.16, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+/* timeline filter */
+const timelineFilters = document.querySelectorAll('[data-tfilter]');
+const timelineItems = document.querySelectorAll('.timeline-item');
+
+timelineFilters.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const target = btn.dataset.tfilter;
+
+    timelineFilters.forEach(item => {
+      const active = item === btn;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-pressed', String(active));
+    });
+
+    timelineItems.forEach(item => {
+      const show = target === 'all' || item.dataset.tags.includes(target);
+      item.classList.toggle('hidden', !show);
+      if (show) {
+        item.classList.add('visible');
+      }
+    });
+  });
+});
+
+/* tabs */
+const tabs = document.querySelectorAll('.tab');
+const panels = document.querySelectorAll('.tab-panel');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(item => {
+      const selected = item === tab;
+      item.classList.toggle('active', selected);
+      item.setAttribute('aria-selected', String(selected));
+    });
+
+    panels.forEach(panel => {
+      const show = panel.id === tab.getAttribute('aria-controls');
+      panel.classList.toggle('active', show);
+      panel.hidden = !show;
+    });
+  });
+});
+
+/* quiz */
+const quizForm = document.getElementById('quizForm');
+const quizResult = document.getElementById('quizResult');
+const feedbackText = {
+  q1: '伟大建党精神于2021年在庆祝中国共产党成立100周年大会上提出。',
+  q2: '1924年，孙中山为国立广东大学题写这十个字。',
+  q3: '1921年春天广州共产党组织成立，陈独秀任首任书记，后由谭平山接任。',
+  q4: '从1938年10月到1945年复员，中大流亡办学整整七年。',
+  q5: '“四史”包括党史、新中国史、改革开放史、社会主义发展史。'
+};
+
+quizForm.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const items = quizForm.querySelectorAll('.quiz-item');
+  let correctCount = 0;
+  let answeredCount = 0;
+
+  items.forEach(item => {
+    const answer = item.dataset.answer;
+    const checked = item.querySelector('input[type="radio"]:checked');
+    const feedback = item.querySelector('.quiz-feedback');
+    item.classList.remove('correct', 'wrong');
+
+    if (!checked) {
+      item.classList.add('wrong');
+      feedback.hidden = false;
+      feedback.textContent = '请先选择一个答案。';
+      return;
+    }
+
+    answeredCount += 1;
+    const isCorrect = checked.value === answer;
+    item.classList.add(isCorrect ? 'correct' : 'wrong');
+    feedback.hidden = false;
+    feedback.textContent = isCorrect ? '回答正确！' : `回答有误。${feedbackText[item.querySelector('input').name] || ''}`;
+    if (isCorrect) correctCount += 1;
+  });
+
+  if (correctCount === items.length) {
+    quizResult.textContent = `满分层：${correctCount}/${items.length}！继续把历史讲给更多人听。`;
+  } else if (correctCount >= 3) {
+    quizResult.textContent = `不错的成绩：${correctCount}/${items.length}。再看一遍校史长卷，会更扎实。`;
+  } else {
+    quizResult.textContent = `本次得分：${correctCount}/${items.length}。红色校史值得反复阅读。`;
+  }
+});
+
+quizForm.addEventListener('reset', () => {
+  window.setTimeout(() => {
+    quizForm.querySelectorAll('.quiz-item').forEach(item => {
+      item.classList.remove('correct', 'wrong');
+      const feedback = item.querySelector('.quiz-feedback');
+      feedback.hidden = true;
+      feedback.textContent = '';
+    });
+    quizResult.textContent = '';
+  }, 0);
+});
+
+/* active nav */
+const navLinks = [...document.querySelectorAll('.main-nav a')];
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = `#${entry.target.id}`;
+      navLinks.forEach(link => link.classList.toggle('active-link', link.getAttribute('href') === id));
+    }
+  });
+}, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+['timeline', 'party', 'spirit', 'sishi', 'history', 'faculty', 'today', 'quiz'].forEach(id => {
+  const target = document.getElementById(id);
+  if (target) sectionObserver.observe(target);
+});
+</script>
+</body>
+</html>
+
+
